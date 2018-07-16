@@ -1,8 +1,15 @@
 # TradingRobot
-Syslar med ting man nesten kan.
+Doing stuff I almost know.
+Collecting historical stock market data from the Oslo Stock Exchange and tangle with some prediction and machine learning algorithms.
 
-Steg 1. Hent data.
 
-Steg 2. Send data til en database
+Step 1. Collect data.
+Will be done using historical data Netfonds.
 
-Steg 3. Gjør noe fornuftig med dataene.
+
+Step 2. Send data to a DB (SQL)
+
+Step 3. Do something cool with the data in SQL
+
+Step 4. Profit?
+
