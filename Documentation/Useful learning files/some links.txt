@@ -20,7 +20,31 @@ https://github.com/Aarvik/TradingRobot
 
 
 
-Some StackOverflow links:
+Some StackOverflow links and other tutorials:
 https://stackoverflow.com/questions/20309456/call-a-function-from-another-file-in-python 
 
 https://stackoverflow.com/questions/12169839/which-is-the-preferred-way-to-concatenate-a-string-in-python
+
+https://stackoverflow.com/questions/21104592/json-to-pandas-dataframe
+
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_json.html
+
+https://stackoverflow.com/questions/15008970/way-to-read-first-few-lines-for-pandas-dataframe
+
+
+Possible tools:
+
+https://github.com/yhat/pandasql
+
+https://github.com/pydata/pandas-datareader
+
+https://stackoverflow.com/questions/38610723/how-to-insert-a-pandas-dataframe-to-an-already-existing-table-in-a-database
+
+https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.to_sql.html
+
+https://chrisalbon.com/python/data_wrangling/pandas_dataframe_importing_csv/
+
+https://github.com/ntftrader/ntfdl
+
+
+
