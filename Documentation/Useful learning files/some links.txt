@@ -9,8 +9,18 @@ https://www.oslobors.no/ob/servlets/components?type=table&generators%5B0%5D%5Bso
 
 
 
+OSEBX ticker oversikt
+https://www.oslobors.no/markedsaktivitet/#/list/shares/quotelist/ose/all/all/false
+
+
+
+This project
+https://github.com/Aarvik/TradingRobot
 
 
 
 
+Some StackOverflow links:
+https://stackoverflow.com/questions/20309456/call-a-function-from-another-file-in-python 
 
+https://stackoverflow.com/questions/12169839/which-is-the-preferred-way-to-concatenate-a-string-in-python
