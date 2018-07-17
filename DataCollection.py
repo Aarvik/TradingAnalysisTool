@@ -7,6 +7,8 @@ Created on Mon Jul 16 23:14:35 2018
 
 This file will hold the data collection functions of the project
 
+It also includes a quick way of recieving the tickers off of Oslo Børs.
+
 The URL which we will collect data from is:
 https://www.netfonds.no/quotes/paperhistory.php?paper=TICKER.OSE&csv_format=csv
 
@@ -16,25 +18,29 @@ Ranging from trading start for the ticker to current year.
 """
 
 #Todo 
-#1. Import ticker list first
-#2. Make it dynamic based on date to capture delta data
+# Create the deltadatacollection function
 
 import numpy as np
 import pandas as p
 import requests as r
 import io
+import json
 
 
-def GetOSETickets():
-    #TODO
-    """
-    Parse resulting JSON from:
-    https://www.oslobors.no/ob/servlets/components?type=table&generators%5B0%5D%5Bsource%5D=feed.ose.quotes.EQUITIES%2BPCC&filter=VOLUME_TOTAL%3En0&view=DELAYED&columns=PERIOD%2C+INSTRUMENT_TYPE%2C+TRADE_TIME%2C+ITEM_SECTOR%2C+ITEM%2C+LONG_NAME%2C+BID%2C+ASK%2C+LASTNZ_DIV%2C+CLOSE_LAST_TRADED%2C+CHANGE_PCT_SLACK%2C+TURNOVER_TOTAL%2C+TRADES_COUNT_TOTAL%2C+MARKET_CAP%2C+HAS_LIQUIDITY_PROVIDER%2C+PERIOD%2C+MIC%2C+GICS_CODE_LEVEL_1%2C+TIME%2C+VOLUME_TOTAL&channel=5571c881cdd34770e386931bddb48f05
-    """
+def GetOSETickersAndNames():
+     """I manually cleaned the data. It is probably pretty easy to do it directly but it served my purpose. Check the repo for a ticker-list if you don't want the hassle"""
+    #TODO - Create an actual parser Parser
+    TURL="https://www.oslobors.no/ob/servlets/components?type=table&generators%5B0%5D%5Bsource%5D=feed.ose.quotes.EQUITIES%2BPCC&filter=VOLUME_TOTAL%3En0&view=DELAYED&columns=ITEM_SECTOR%2C+ITEM%2C+LONG_NAME%2C&channel=5571c881cdd34770e386931bddb48f05"
+    TickerRaw=p.read_json(TURL)
+    T=TickerRaw.to_csv('TickersAndNames',index=False)
+    
+   
+  
+  
     
 
 
-def DataCollectionNetFonds(Ticker): #TODO Use the parameter Lastdate to capture delta data
+def DataCollectionNetFonds(Ticker):
     print("Henter data for " + Ticker)
     a="https://www.netfonds.no/quotes/paperhistory.php?paper="
     b=Ticker
@@ -45,6 +51,14 @@ def DataCollectionNetFonds(Ticker): #TODO Use the parameter Lastdate to capture 
     c=p.read_csv(io.StringIO(s.decode("ISO-8859-1")))
     print(c)
     
+def DeltaDataCollectionNetFonds(Ticker, LastDate): #TODO - Use the Lastdate parameter
+    print("Henter data for " + Ticker)
+    a="https://www.netfonds.no/quotes/paperhistory.php?paper="
+    b=Ticker
+    c=".OSE&csv_format=csv"
+    url=a+b+c    
+    #url="https://www.netfonds.no/quotes/paperhistory.php?paper=DNB.OSE&csv_format=csv" ####This one works
+    s=r.get(url).content
+    c=p.read_csv(io.StringIO(s.decode("ISO-8859-1")))
+    print(c)
 
-
-DataCollectionNetFonds("DNB")
