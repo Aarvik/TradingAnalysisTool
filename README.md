@@ -1,4 +1,4 @@
-# TradingRobot
+# TradingAnalysisTool
 Doing stuff I almost know.
 Collecting historical stock market data from the Oslo Stock Exchange and tangle with some prediction and machine learning algorithms.
 
